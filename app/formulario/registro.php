@@ -6,7 +6,12 @@ $db_user="usuario_app";
 $db_password="password_app";
 $db_name="sitio_inseguro";
 $db_table_name="personas";
+//   $db_connection = mysqli_connect($db_host, $db_user, $db_password,$db_name);
+try{
    $db_connection = mysqli_connect($db_host, $db_user, $db_password,$db_name);
+}catch (Exception $e) {
+ echo $e;    
+}
 
 function debug_to_console($data) {
     $output = $data;
