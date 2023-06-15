@@ -4,5 +4,5 @@ Sitio muy simple y rudimentario en php, el cual consta de un formulario y un log
 
 
 -------------------------------
-Fuentes:
-https://www.sqltutorial.org
+Base de datos basada de:
+https://www.sqltutorial.org/sql-sample-database/
