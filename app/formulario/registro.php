@@ -30,8 +30,11 @@ $subs_name = utf8_decode($_POST['nombre']);
 $subs_last = utf8_decode($_POST['apellido']);
 $subs_email = utf8_decode($_POST['email']);
 $subs_password = utf8_decode($_POST['password']);
-
+try{
 $resultado=mysqli_query($db_connection,"SELECT * FROM ".$db_table_name." WHERE Email = '".$subs_email."'");
+}catch (Exception $e) {
+ echo $e;    
+}
 
 if (mysqli_num_rows($resultado)>0)
 {
