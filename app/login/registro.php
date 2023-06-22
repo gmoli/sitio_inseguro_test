@@ -49,8 +49,11 @@ header('Location: Success.html');
 //mysqli_select_db($db_name, $db_connection);
 //mysqli_select_db($link, "world");
   mysqli_select_db($db_connection, "sitio_inseguro");
-
+try{
 $retry_value = mysqli_query($db_connection, $insert_value);
+}catch (Exception $e) {
+ echo $e;    
+}
 
 if (!$retry_value) {
    die('Error: ' . mysqli_error());
