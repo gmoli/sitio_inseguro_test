@@ -1,12 +1,6 @@
-
-
 <?php
-$db_host="localhost";
-$db_user="usuario_app";
-$db_password="password_app";
-$db_name="sitio_inseguro";
-$db_table_name="personas";
-//   $db_connection = mysqli_connect($db_host, $db_user, $db_password,$db_name);
+
+require '../configuration.php';
 try{
    $db_connection = mysqli_connect($db_host, $db_user, $db_password,$db_name);
 }catch (Exception $e) {
@@ -21,7 +15,6 @@ function debug_to_console($data) {
     echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
 
-   //$db_connection = mysql_connect($db_host, $db_user, $db_password);
 
 if (!$db_connection) {
 	echo 'No se ha podido conectar a la base de datos' ;die();
@@ -47,8 +40,6 @@ header('Location: Fail.html');
 
     debug_to_console($insert_value );
 
-//mysqli_select_db($db_name, $db_connection);
-//mysqli_select_db($link, "world");
   mysqli_select_db($db_connection, "sitio_inseguro");
 try{
 $retry_value = mysqli_query($db_connection, $insert_value);
@@ -62,11 +53,5 @@ if (!$retry_value) {
 	
 header('Location: Success.html');
 }
-
 mysqli_close($db_connection);
-		
-
-
-
-
 ?>
